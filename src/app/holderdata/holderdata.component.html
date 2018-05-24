@@ -1,0 +1,304 @@
+<div class="col-md-10 col-sm-12 col-xs-12" style="background-color: #f6f6f6;">
+  <div *ngIf="showBtns" id="select-option">
+
+    <div class="col-md-12" style="margin-bottom: 50px;">
+      <div class="row">
+        <div class="col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-12 col-xs-12 top-card">
+          <div class="outer">
+            <div class="inner" style="padding: 0;">
+              <div class="x_content">
+
+                <div class="row">
+                  <div class="hidden-xs title-holder">
+                    <div class="title text-center">
+                      <p>Search fot BitBond holder data by</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="or-holder">
+                    <div class="hidden-xs or text-center">
+                      <strong>OR</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 left-section">
+                    <h2>
+                      <strong>16-Digit Bond ID</strong>
+                    </h2>
+
+                    <div class="input-div row">
+                      <div class="col-lg-offset-2 col-lg-8">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                          <input type="text" class="form-control1" maxlength="4">
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                          <input type="text" class="form-control1" maxlength="4">
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                          <input type="text" class="form-control1" maxlength="4">
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                          <input type="text" class="form-control1" maxlength="4">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <button type="submit" class="btn search-btn" (click)="searchResult = !searchResult; showBtns = false">Search</button>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 right-section">
+                    <h2>
+                      <strong>Holder Name</strong>
+                    </h2>
+
+                    <div class="row">
+                      <div>
+                        <input type="text" placeholder="Enter First Name" required="required" class="form-control">
+                        <input type="text" placeholder="Enter Last Name" required="required" class="form-control">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <button type="submit" class="btn search-btn" (click)="searchResult = !searchResult; showBtns = false">Search</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="searchResult" class="search-results" style="width: 100%;">
+    <div class="col-md-12 col-sm-12 col-xs-12 top-card">
+      <div class="outer">
+        <div class="icon-card">
+          <span>Search Results</span>
+          <button type="button" class="btn btn-cancel pull-right back-to-search hidden-xs" (click)="searchResult = !searchResult; showBtns = true"
+            href="" onclick="return false">Back to Search</button>
+        </div>
+
+        <div class="inner">
+          <div class="panel-title" style="color:#2083FE">2 Results found for
+            <strong>"Tom Donohue"</strong>
+          </div>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>E-mail</th>
+                <th>State</th>
+                <th>Broker</th>
+                <th># Bonds Registered </th>
+                <th></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Donohue, Tom R</td>
+                <td>TDon@aim.com</td>
+                <td>CO</td>
+                <td>Relik WM</td>
+                <td>3 BitBonds Registered</td>
+                <td>
+                  <button type="button" class="btn btn-primary" (click)="searchConfirm = !searchConfirm; showBtns = false; searchResult = !searchResult;">View</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Donohue, Tom A </td>
+                <td>DonT@aim.com </td>
+                <td>MN </td>
+                <td>Cash Money </td>
+                <td>1 BitBond Registered </td>
+                <td>
+                  <button type="button" class="btn btn-primary" (click)="searchConfirm = !searchConfirm; showBtns = false; searchResult = !searchResult;">View</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class=" col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12 top-card">
+      <div class="inner" style="border-top: 2px solid #2083FE; border-top-right-radius: 0px; text-align: center; margin-top: -35px; margin-bottom: 60px;">
+        <p>
+          <strong>Select the desired holder to view all applicable info</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search confirm -->
+  <div *ngIf="searchConfirm" class="search-results" style="width: 100%;">
+    <div class="col-md-offset-2 col-md-8 col-sm-12 col-xs-12 show-card">
+      <div class="head text-center">
+        <h1 class="head-title">Holder Data For</h1>
+        <div class="row">
+
+          <div class="row">
+            <span class="col-lg-offset-5 col-lg-2 col-md-offset-4 col-md-4 col-sm-offset-5 col-sm-2 col-xs-offset-4 col-xs-4 black-card">Broker ID 000001</span>
+            <span class="col-lg-offset-5 col-lg-2 col-md-offset-4 col-md-4 col-sm-offset-5 col-sm-2 col-xs-offset-4 col-xs-4 gray-card">Tom R Donohue</span>
+            <!-- <span class="blue-card">
+              <i class="fas fa-link"></i>
+            </span> -->
+          </div>
+
+          <div class="row form">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 holder-data-left">
+              <div class="row" style="padding: 10px;">
+                <span class="col-lg-8 col-md-8 col-sm-8 col-xs-10" style="text-align: left;">E-mail</span>
+                <span class="col-lg-4 col-md-4 col-sm-4 col-xs-2" style="text-align: right; color: #2083FE;">
+                  <i class="fas fa-edit"></i>
+                </span>
+                <input type="text" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-control11" placeholder="TDon@aim.com">
+              </div>
+
+              <div class="row" style="padding: 10px;">
+                <span class="col-lg-8 col-md-8 col-sm-8 col-xs-10" style="text-align: left;">DOB</span>
+                <span class="col-lg-4 col-md-4 col-sm-4 col-xs-2" style="text-align: right; color: #2083FE;">
+                  <i class="fas fa-edit"></i>
+                </span>
+                <input type="text" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-control11" placeholder="6/19/90">
+              </div>
+
+              <div class="row" style="padding: 10px;">
+                <span class="col-lg-8 col-md-8 col-sm-8 col-xs-10" style="text-align: left;">Phone</span>
+                <span class="col-lg-4 col-md-4 col-sm-4 col-xs-2" style="text-align: right; color: #2083FE;">
+                  <i class="fas fa-edit"></i>
+                </span>
+                <input type="text" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-control11" placeholder="934-393-3943">
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 holder-data-right">
+              <div class="row" style="padding: 10px;">
+                <span class="col-lg-8 col-md-8 col-sm-8 col-xs-10" style="text-align: left;">Address</span>
+                <span class="col-lg-4 col-md-4 col-sm-4 col-xs-2" style="text-align: right; color: #2083FE;">
+                  <i class="fas fa-edit"></i>
+                </span>
+                <input type="text" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-control11" placeholder="1222 Colfax Ave. Denver, CO 80552 Proof of Address">
+              </div>
+
+              <div class="row">
+                <span class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="text-align: left; padding-top: 10px;">
+                  <strong style="padding-left: 10px;">Last 4 Digits of Social</strong>
+                </span>
+                <input type="text" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 form-control11" placeholder="1222" style="margin: 0">
+                <span class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="color: red; font-size: 20px; padding: 5px;">
+                  <i class="fas fa-key"></i>
+                </span>
+              </div>
+
+              <div class="row" style="padding: 10px; text-align: left;">
+                <span class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-decoration: underline;">
+                  <a href="#" style="color: #2083FE;">
+                    <strong>Proof of ID</strong>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" style="padding-bottom: 60px;">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <button class="btn-black" style="height: 50px;width: 200px;margin-top: 20px;" (click)="searchConfirm = !searchConfirm; searchResult=true">Search Results</button>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <button class="btn-black" style="height: 50px;width: 200px;margin-top: 20px;" (click)="searchConfirm = !searchConfirm; searchreView=true;">BitBond Holdings</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- result view -->
+  <div *ngIf="searchreView" class="search-results" style="width: 100%;">
+    <div class="col-md-12 main">
+      <div class="table-heading">
+        <span>All Bonds minted under</span>
+        <div class="header-icon">
+          <i class="fas fa-link"></i>
+        </div>
+        <div class="bond-id">
+          Broker ID 000001
+        </div>
+      </div>
+      <div class="table-outer">
+
+        <div class="table-inner row">
+          <div class="col-md-12">
+            <p class="note">* Sort by clicking a data field</p>
+          </div>
+          <div class="col-md-12">
+            <div class="table-holder">
+              <table datatable [dtOptions]="dtOptions" class="row-border hover">
+                <thead>
+                  <tr>
+                    <th>
+                      <input type="checkbox" id="check-all" class="flat">
+                    </th>
+                    <th>BOND ID</th>
+                    <th>STATUS</th>
+                    <th>HOLDER</th>
+                    <th>DENOMINATION</th>
+                    <th>PURCHASE RATE</th>
+                    <th>CURRENT VALUE</th>
+                    <th>%GAIN</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="checkbox" id="check-all" class="flat">
+                    </td>
+                    <td>0000-0000-0000-0001</td>
+                    <td class="active-stat">ACTIVE</td>
+                    <td>DONOHUE,TOM</td>
+                    <td>50 BITCOIN CASH</td>
+                    <td>600,000 USD</td>
+                    <td>101.5 BTC</td>
+                    <td>3.5%</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" id="check-all" class="flat">
+                    </td>
+                    <td>0000-0000-0000-0002</td>
+                    <td class="disable-stat">INACTIVE</td>
+                    <td>OWEN,PARKER</td>
+                    <td>50 BITCOIN CASH</td>
+                    <td>600,000 USD</td>
+                    <td>358 BTC</td>
+                    <td>3.5%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-md-12 button-group">
+      <button type="button" class="ebtn col-md-3 col-md-offset-2">Export Selected Bond Data</button>
+      <button type="button" class="ebtn col-md-3 col-md-offset-2">Export All Bond Data</button>
+    </div>
+  </div>
+</div>

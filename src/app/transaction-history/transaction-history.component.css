@@ -1,0 +1,226 @@
+table tr td:last-child {
+    text-align: center
+}
+
+.inner {
+    padding: 15px 20px;
+    border-radius: 5px 5px 0px 0px;
+    background-color: white;
+    border-radius: 0px 5px 5px 5px;
+    -webkit-box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.3);
+}
+
+.top-card {
+    margin-top: 7%;
+    float: none;
+}
+
+.icon-card {
+    position: relative;
+    margin-top: -59px;
+    background-color: white;
+    /* color: white; */
+    width: fit-content;
+    height: 60px;
+    border-radius: 5px 5px 0px 0px;
+    /* border: 2px solid #91EB1D; */
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 0px;
+    padding: 15px;
+}
+
+.x_panel {
+    border: none;
+    -webkit-column-break-inside: none;
+    -moz-column-break-inside: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    overflow: scroll;
+}
+
+.modal-header {
+    background: none;
+    color: #252529;
+    border: none;
+    padding-bottom: 0;
+}
+
+.modal-footer {
+    border: none;
+    text-align: -webkit-center;
+}
+
+/* Detail view */
+.table-outer {
+    background-color: #EFF7FF;
+    border-radius: 0px 5px 5px 5px;
+    -webkit-box-shadow: 10px 8px 15px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 10px 8px 15px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.table-heading {
+    background-color: white;
+    border-radius: 5px 5px 0px 0px;
+    padding: 10px 20px;
+    height: 48px;
+    width: 270px;
+    font-size: 20px;
+    -webkit-box-shadow: 0px 7px 25px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 7px 25px 0px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.top-cards {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table-heading span {
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+}
+
+.bond-id {
+    position: relative;
+    padding: 8px;
+    width: 190px;
+    height: 42px;
+    background-color: rgb(44, 44, 44);
+    color: white;
+    margin-left: 39%;
+    border-radius: 3px;
+    margin-top: 0%;
+    font-size: 18px;
+    text-align: center;
+}
+
+.header-icon {
+    width: 3%;
+    background-color: #2C6ADC;
+    color: white;
+    position: relative;
+    margin-left: 48.5%;
+    border-radius: 3px;
+    margin-top: -1%;
+    z-index: 2;
+    font-size: 14px;
+    text-align: center;
+    padding: 7px 0px 7px 0px;
+}
+
+.header-icon img {
+    width: 25px;
+    position: relative;
+    top: -8px;
+
+}
+
+.table-inner p {
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.table-inner .table-holder {
+    padding: 10px 20px;
+}
+
+.space-around {
+    margin: 2.5%;
+}
+
+.cards {
+    background-color: #FFFFFF;
+    text-align: left;
+}
+
+.card1 {
+    border-top: 2px solid #F5B848;
+    text-align: left;
+
+    -webkit-box-shadow: 0px 3px 14px -3px rgba(122, 122, 122, 1);
+    -moz-box-shadow: 0px 3px 14px -3px rgba(122, 122, 122, 1);
+    box-shadow: 0px 3px 14px -3px rgba(122, 122, 122, 1);
+}
+
+.card2 {
+    background: none;
+    font-size: 32px;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 6%;
+}
+
+.card3 {
+    border-top: 2px solid #2083FE;
+    -webkit-box-shadow: 0px 3px 14px -3px rgba(122, 122, 122, 1);
+    -moz-box-shadow: 0px 3px 14px -3px rgba(122, 122, 122, 1);
+    box-shadow: 0px 3px 14px -3px rgba(122, 122, 122, 1);
+}
+
+.card1 h4 {
+    margin: 6%;
+}
+
+.card3 h4 {
+    margin: 4%;
+}
+
+.form-control11 {
+    -webkit-box-shadow: 0px 3px 14px -3px rgba(122, 122, 122, 1);
+    -moz-box-shadow: 0px 3px 14px -3px rgba(122, 122, 122, 1);
+    box-shadow: 0px 3px 14px -3px rgba(122, 122, 122, 1);
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: white
+}
+
+.export-btn {
+    background-color: #2083FE;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 10px 20px 10px 20px;
+}
+
+.modal-body {
+    margin-bottom: -30px;
+}
+
+.broker-id{
+    width: 190px;
+    height: 42px;
+    padding: 8px;
+    background-color: rgb(44, 44, 44);
+    color: white;
+    border-radius: 3px;
+    font-size: 18px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.broker-header-icon {
+    width: 30px;
+    background-color: #2C6ADC;
+    color: white;
+    position: relative;
+    margin-left: 48.5%;
+    border-radius: 3px;
+    margin-top: -1%;
+    z-index: 2;
+    font-size: 14px;
+    text-align: center;
+    padding: 7px 0px 7px 0px;
+}
+
+.details-modal-input-row{
+    margin: 10px;
+    margin-top: 20px;
+}

@@ -1,0 +1,850 @@
+<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12" style="background-color: #f6f6f6; margin-top: 60px;">
+  <div *ngIf="showBtns" id="select-option">
+    <!-- tile section -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="head">
+        <h3>Broker Management</h3>
+        <hr/>
+      </div>
+
+      <div class="row main-row">
+        <div class="col-lg-offset-4 col-lg-6 col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 col-xs-12">
+          <div style="height: 100%; text-align: center; align-items: center; margin-top: auto; margin-bottom: auto;">
+            <div class="col-lg-offset-2 col-lg-4 col-md-6 col-sm-6 col-xs-12 management-tile">
+              <a (click)="showExistingBrokers = !showExistingBrokers; showBtns = false" href="" onclick="return false" id="manage-existing">
+                <div class="selection-type btn-left">
+                  <img src="../../assets/images/brokers.png">
+                  <h2>Manage Existing Brokers</h2>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 management-tile">
+              <a (click)="showCreateBroker = !showCreateBroker; showBtns = false" href="" onclick="return false" id="create-a-broker">
+                <div class="selection-type btn-right">
+                  <img src="../../assets/images/new-broker.png">
+                  <h2>Create A New Broker</h2>
+                </div>
+              </a>
+            </div>
+
+            <!-- <div class="col-md-2 or-holder">
+              <div class="or">
+                <strong>OR</strong>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="showCreateBroker" class="create-broker" style="width: 100%; display: block; margin-bottom: 60px;" id="create-broker">
+    <div class="col-md-offset-1 col-md-10 top-card1" style="color:#0E1935; margin-top: 60px;">
+      <p style="text-align: center; font-size: 24px;">Create A New Broker</p>
+      <p class="required">* Required Field</p>
+
+      <div class="row">
+        <input type="text" class="col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4 col-xs-12 form-control11" placeholder="User Name"
+          style="color: #2C6ADC">
+      </div>
+
+      <div class="new-broker-section">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="margin-bottom: 20px">
+          <p>Physical Address</p>
+
+          <div class="row new-broker-input-row">
+            <input type="text" class="col-md-11 col-sm-11 col-xs-11 form-control11" placeholder="Address Line 1">
+            <p class="col-md-1 col-sm-1 col-xs-1" style="color: #FF0000">*</p>
+          </div>
+          <div class="row new-broker-input-row">
+            <input type="text" class="col-md-11 col-sm-11 col-xs-11 form-control11" placeholder="Address Line 2">
+            <p class="col-md-1 col-sm-1 col-xs-1" style="color: #FF0000">*</p>
+          </div>
+          <div class="row new-broker-input-row">
+            <input type="text" class="col-md-11 col-sm-11 col-xs-11 form-control11" placeholder="City">
+            <p class="col-md-1 col-sm-1 col-xs-1" style="color: #FF0000">*</p>
+          </div>
+          <div class="row new-broker-input-row">
+            <input type="text" class="col-md-11 col-sm-11 col-xs-11 form-control11" placeholder="State">
+            <p class="col-md-1 col-sm-1 col-xs-1" style="color: #FF0000">*</p>
+          </div>
+          <div class="row new-broker-input-row">
+            <input type="text" class="col-md-11 col-sm-11 col-xs-11 form-control11" placeholder="Postal Code">
+            <p class="col-md-1 col-sm-1 col-xs-1" style="color: #FF0000">*</p>
+          </div>
+          <div class="row new-broker-input-row">
+            <select class="col-md-11 col-sm-11 col-xs-11 form-select" value="Select Country">
+              <option value="">Select Country</option>
+              <option value="">United States</option>
+              <option value="">Sri Lanka</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <p>Mailing Address</p>
+
+          <div class="new-broker-right-area">
+            <p>
+              Check box if different
+              <input type="checkbox" name="different" value="" style="margin-left: 10px;">
+            </p>
+            <div class="row new-broker-input-row">
+              <input type="text" class="col-md-11 col-sm-11 col-xs-11 form-control11" placeholder="Address Line 1">
+              <p class="col-md-1 col-sm-1 col-xs-1" style="color: #FF0000">*</p>
+            </div>
+            <div class="row new-broker-input-row">
+              <input type="text" class="col-md-11 col-sm-11 col-xs-11 form-control11" placeholder="Address Line 2">
+              <p class="col-md-1 col-sm-1 col-xs-1" style="color: #FF0000">*</p>
+            </div>
+          </div>
+
+          <div class="new-broker-right-area">
+            <p>Commission Payment Account</p>
+            <div class="row new-broker-input-row">
+              <input type="text" class="col-md-11 col-sm-11 col-xs-11 form-control11" placeholder="Address Line 1">
+              <p class="col-md-1 col-sm-1 col-xs-1" style="color: #FF0000">*</p>
+            </div>
+            <div class="row new-broker-input-row">
+              <input type="text" class="col-md-11 col-sm-11 col-xs-11 form-control11" placeholder="Address Line 2">
+              <p class="col-md-1 col-sm-1 col-xs-1" style="color: #FF0000">*</p>
+            </div>
+            <div class="row new-broker-input-row">
+              <input type="text" class="col-md-7 col-sm-7 col-xs-11 form-control11" placeholder="Routing Number" style="margin-bottom: 10px;">
+              <p class="col-md-1 col-sm-1 col-xs-1" style="color: #FF0000">*</p>
+              <input type="text" class="col-md-3 col-sm-3 col-xs-11 form-control11" placeholder="Swift Code">
+              <p class="col-md-1 col-sm-1 col-xs-1" style="color: #FF0000">*</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <button type="button" class="col-lg-offset-5 col-lg-2 col-md-offset-5 col-md-2 col-sm-offset-5 col-sm-2 col-sm-offset-5 col-sm-2 col-xs-offset-4 col-xs-4 btn btn-default create-btn"
+          data-dismiss="modal" (click)="lgModal.show()">Create!</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="showExistingBrokers" class="manage-brokers" style="height: 100%; width: 100%; display: block" id="manage-brokers">
+    <div class="col-md-12 top-card">
+      <div class="outer">
+        <!-- <div class="col-lg-2 col-md-4 col-sm-5 col-xs-10 icon-card">
+          <span>Manage Existing Brokers</span>
+          <button type="button" class="btn btn-cancel pull-right back-to-search" (click)="showExistingBrokers = !showExistingBrokers; showBtns = true"
+            href="" onclick="return false">Back</button>
+        </div> -->
+
+        <div class="row">
+          <p class="col-lg-2 col-md-4 col-sm-5 col-xs-10 manage-table-title">Manage Existing Brokers</p>
+          <button type="button" class="pull-right hidden-xs" (click)="showExistingBrokers = !showExistingBrokers; showBtns = true"
+            href="" onclick="return false">Back</button>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inner">
+          <table datatable id="datatable-brokers" class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>Broker ID</th>
+                <th>Broker Name</th>
+                <th>Address</th>
+                <th>City, State</th>
+                <th>Current 30 DV</th>
+                <th>%Tier</th>
+                <th>Show Info</th>
+              </tr>
+            </thead>
+
+
+            <tbody>
+              <tr>
+                <td>000001</td>
+                <td>Relik Wealth Management</td>
+                <td>1923, Edinburgh</td>
+                <td>New York, NY</td>
+                <td>101.5 BTC</td>
+                <td>3.5%</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>000002</td>
+                <td>BM Group</td>
+                <td>12D Tokyo</td>
+                <td>Tokyo, TK</td>
+                <td>125 BTC</td>
+                <td>3.7%</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>000003</td>
+                <td>Frapz Capital</td>
+                <td>50 Base line</td>
+                <td>Atlanta, GA</td>
+                <td>1004 BTC</td>
+                <td>6%</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>000004</td>
+                <td>Fidelity</td>
+                <td>89 Iceland Cr</td>
+                <td>Auburn, AL</td>
+                <td>2012 BTC</td>
+                <td>4.3%</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>000005</td>
+                <td>Owen Investemt Trust</td>
+                <td>1 Fidelity Rd</td>
+                <td>New York, NY</td>
+                <td>228 BTC</td>
+                <td>4.1%</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>000006</td>
+                <td>TD Ameritrade</td>
+                <td>20 Alabama Ave</td>
+                <td>Birmingham, AL</td>
+                <td>582 BTC</td>
+                <td>10%</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>000007</td>
+                <td>QB Almirah</td>
+                <td>9 America DR</td>
+                <td>Denver, CO</td>
+                <td>67.8 BTC</td>
+                <td>8%</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>000008</td>
+                <td>Ashken Investors</td>
+                <td>99 Tree Ave</td>
+                <td>San Francisco, SF</td>
+                <td>18623 BTC</td>
+                <td>2.1%</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>000009</td>
+                <td>Balik Group</td>
+                <td>23A RunWay</td>
+                <td>Los Angelese, LA</td>
+                <td>4715 BTC</td>
+                <td>4%</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>000010</td>
+                <td>Rindik Wealth Management</td>
+                <td>65B/2 Mal Rd</td>
+                <td>Edinburgh, ED</td>
+                <td>113 BTC</td>
+                <td>8%</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Jena Gaines</td>
+                <td>Office Manager</td>
+                <td>London</td>
+                <td>30</td>
+                <td>2008/12/19</td>
+                <td>$90,560</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Quinn Flynn</td>
+                <td>Support Lead</td>
+                <td>Edinburgh</td>
+                <td>22</td>
+                <td>2013/03/03</td>
+                <td>$342,000</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Charde Marshall</td>
+                <td>Regional Director</td>
+                <td>San Francisco</td>
+                <td>36</td>
+                <td>2008/10/16</td>
+                <td>$470,600</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Haley Kennedy</td>
+                <td>Senior Marketing Designer</td>
+                <td>London</td>
+                <td>43</td>
+                <td>2012/12/18</td>
+                <td>$313,500</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Tatyana Fitzpatrick</td>
+                <td>Regional Director</td>
+                <td>London</td>
+                <td>19</td>
+                <td>2010/03/17</td>
+                <td>$385,750</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Michael Silva</td>
+                <td>Marketing Designer</td>
+                <td>London</td>
+                <td>66</td>
+                <td>2012/11/27</td>
+                <td>$198,500</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Paul Byrd</td>
+                <td>Chief Financial Officer (CFO)</td>
+                <td>New York</td>
+                <td>64</td>
+                <td>2010/06/09</td>
+                <td>$725,000</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Gloria Little</td>
+                <td>Systems Administrator</td>
+                <td>New York</td>
+                <td>59</td>
+                <td>2009/04/10</td>
+                <td>$237,500</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Bradley Greer</td>
+                <td>Software Engineer</td>
+                <td>London</td>
+                <td>41</td>
+                <td>2012/10/13</td>
+                <td>$132,000</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Dai Rios</td>
+                <td>Personnel Lead</td>
+                <td>Edinburgh</td>
+                <td>35</td>
+                <td>2012/09/26</td>
+                <td>$217,500</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Jenette Caldwell</td>
+                <td>Development Lead</td>
+                <td>New York</td>
+                <td>30</td>
+                <td>2011/09/03</td>
+                <td>$345,000</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Yuri Berry</td>
+                <td>Chief Marketing Officer (CMO)</td>
+                <td>New York</td>
+                <td>40</td>
+                <td>2009/06/25</td>
+                <td>$675,000</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Caesar Vance</td>
+                <td>Pre-Sales Support</td>
+                <td>New York</td>
+                <td>21</td>
+                <td>2011/12/12</td>
+                <td>$106,450</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Doris Wilder</td>
+                <td>Sales Assistant</td>
+                <td>Sidney</td>
+                <td>23</td>
+                <td>2010/09/20</td>
+                <td>$85,600</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <!-- all Bonds -->
+  <div *ngIf="allBonds" class="search-results" style="width: 100%;">
+
+    <div class="col-md-12 main">
+      <div class="table-heading">
+        <span>All Bonds minted under</span>
+        <div class="header-icon">
+          <i class="fas fa-link"></i>
+        </div>
+        <div class="bond-id">
+          Broker ID 000001
+        </div>
+      </div>
+      <div class="table-outer">
+
+        <div class="table-inner row">
+          <div class="col-md-12">
+            <p class="note">* Sort by clicking a data field</p>
+          </div>
+          <div class="col-md-12">
+            <div class="table-holder">
+              <table datatable [dtOptions]="dtOptions" class="row-border hover">
+                <thead>
+                  <tr>
+                    <th>
+                      <input type="checkbox" id="check-all" class="flat">
+                    </th>
+                    <th>BOND ID</th>
+                    <th>STATUS</th>
+                    <th>HOLDER</th>
+                    <th>DENOMINATION</th>
+                    <th>PURCHASE RATE</th>
+                    <th>CURRENT VALUE</th>
+                    <th>%GAIN</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="checkbox" id="check-all" class="flat">
+                    </td>
+                    <td>0000-0000-0000-0001</td>
+                    <td class="active-stat">ACTIVE</td>
+                    <td>DONOHUE,TOM</td>
+                    <td>50 BITCOIN CASH</td>
+                    <td>600,000 USD</td>
+                    <td>101.5 BTC</td>
+                    <td>3.5%</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" id="check-all" class="flat">
+                    </td>
+                    <td>0000-0000-0000-0002</td>
+                    <td class="disable-stat">INACTIVE</td>
+                    <td>OWEN,PARKER</td>
+                    <td>50 BITCOIN CASH</td>
+                    <td>600,000 USD</td>
+                    <td>358 BTC</td>
+                    <td>3.5%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-md-12 button-group">
+      <button type="button" class="ebtn col-md-4 col-md-offset-4 blue-back" (click)="allBonds = !allBonds; showExistingBrokers=true;">Back</button>
+
+    </div>
+  </div>
+
+
+  <!-- all Commisions -->
+  <div *ngIf="allCommisions" class="search-results" style="width: 100%;">
+    <div class="col-md-12 main">
+
+
+      <div class="table-heading">
+        <span>All bonds loaded under</span>
+        <div class="header-icon">
+          <i class="fas fa-link"></i>
+        </div>
+        <div class="bond-id">
+          Broker ID 000001
+        </div>
+      </div>
+      <div class="table-outer">
+
+        <div class="table-inner row">
+          <div class="col-md-12">
+            <p class="note">*Sort by clickig the data field</p>
+          </div>
+          <div class="col-md-12">
+            <div class="table-holder">
+              <table datatable [dtOptions]="dtOptions" class="row-border hover">
+                <thead>
+                  <tr>
+                    <th>Bond ID</th>
+                    <th>Load Date</th>
+                    <th>Holder</th>
+                    <th>Purchase Rate</th>
+                    <th>Commission</th>
+                    <th>Payment Status</th>
+                    <th>Rate</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>0000-0000-0000-0001</td>
+                    <td>12/03/2017</td>
+                    <td>DONOHUE,TOM</td>
+                    <td>60,000 USD</td>
+                    <td>1,800 USD</td>
+                    <td class="complete">COMPLETE</td>
+                    <td>3.5%</td>
+                  </tr>
+                  <tr>
+                    <td>0000-0000-0000-0002</td>
+                    <td>12/03/2017</td>
+                    <td>OWEN,PARKER</td>
+                    <td>84,000 USD</td>
+                    <td>2,520 USD</td>
+                    <td class="pending">PENDING</td>
+                    <td>3.5%</td>
+                  </tr>
+                  <tr>
+                    <td>0000-0000-0000-0003</td>
+                    <td>12/03/2017</td>
+                    <td>DONOHUE,TOM</td>
+                    <td>12,000 USD</td>
+                    <td>360 USD</td>
+                    <td class="waiting">WAITING</td>
+                    <td>3.5%</td>
+                  </tr>
+                  <tr>
+                    <td>0000-0000-0000-0004</td>
+                    <td>12/03/2017</td>
+                    <td>OWEN,PARKER</td>
+                    <td>60,000 USD</td>
+                    <td>1,800 USD</td>
+                    <td class="complete">COMPLETE</td>
+                    <td>3.5%</td>
+                  </tr>
+                  <tr>
+                    <td>0000-0000-0000-0005</td>
+                    <td>12/03/2017</td>
+                    <td>DONOHUE,TOM</td>
+                    <td>84,000 USD</td>
+                    <td>2,520 USD</td>
+                    <td class="pending">PENDING</td>
+                    <td>3.5%</td>
+                  </tr>
+                  <tr>
+                    <td>0000-0000-0000-0006</td>
+                    <td>12/03/2017</td>
+                    <td>OWEN,PARKER</td>
+                    <td>12,000 USD</td>
+                    <td>360 USD</td>
+                    <td class="waiting">WAITING</td>
+                    <td>3.5%</td>
+                  </tr>
+                  <tr>
+                    <td>0000-0000-0000-0007</td>
+                    <td>12/03/2017</td>
+                    <td>DONOHUE,TOM</td>
+                    <td>60,000 USD</td>
+                    <td>1,800 USD</td>
+                    <td class="complete">COMPLETE</td>
+                    <td>3.5%</td>
+                  </tr>
+                  <tr>
+                    <td>0000-0000-0000-0008</td>
+                    <td>12/03/2017</td>
+                    <td>OWEN,PARKER</td>
+                    <td>84,000 USD</td>
+                    <td>2,520 USD</td>
+                    <td class="pending">PENDING</td>
+                    <td>3.5%</td>
+                  </tr>
+                  <tr>
+                    <td>0000-0000-0000-0009</td>
+                    <td>12/03/2017</td>
+                    <td>DONOHUE,TOM</td>
+                    <td>12,000 USD</td>
+                    <td>360 USD</td>
+                    <td class="waiting">WAITING</td>
+                    <td>3.5%</td>
+                  </tr>
+                  <tr>
+                    <td>0000-0000-0000-0010</td>
+                    <td>12/03/2017</td>
+                    <td>OWEN,PARKER</td>
+                    <td>60,000 USD</td>
+                    <td>1,800 USD</td>
+                    <td class="complete">COMPLETE</td>
+                    <td>3.5%</td>
+                  </tr>
+                  <tr>
+                    <td>0000-0000-0000-0011</td>
+                    <td>12/03/2017</td>
+                    <td>DONOHUE,TOM</td>
+                    <td>84,000 USD</td>
+                    <td>2,520 USD</td>
+                    <td class="pending">PENDING</td>
+                    <td>3.5%</td>
+                  </tr>
+                  <tr>
+                    <td>0000-0000-0000-0012</td>
+                    <td>12/03/2017</td>
+                    <td>OWEN,PARKER</td>
+                    <td>12,000 USD</td>
+                    <td>360 USD</td>
+                    <td class="waiting">WAITING</td>
+                    <td>3.5%</td>
+                  </tr>
+                  <tr>
+                    <td>0000-0000-0000-0013</td>
+                    <td>12/03/2017</td>
+                    <td>DONOHUE,TOM</td>
+                    <td>60,000 USD</td>
+                    <td>1,800 USD</td>
+                    <td class="complete">COMPLETE</td>
+                    <td>3.5%</td>
+                  </tr>
+                  <tr>
+                    <td>0000-0000-0000-0014</td>
+                    <td>12/03/2017</td>
+                    <td>OWEN,PARKER</td>
+                    <td>84,000 USD</td>
+                    <td>2,520 USD</td>
+                    <td class="pending">PENDING</td>
+                    <td>3.5%</td>
+                  </tr>
+                  <tr>
+                    <td>0000-0000-0000-0015</td>
+                    <td>12/03/2017</td>
+                    <td>DONOHUE,TOM</td>
+                    <td>12,000 USD</td>
+                    <td>360 USD</td>
+                    <td class="waiting">WAITING</td>
+                    <td>3.5%</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+
+            <div class="col-md-12 text-center">
+              <p class="condition">*Commission Payments sent weekly for the week prior</p>
+
+              <p class="commision-history">Click
+                <a href="">
+                  <b>here</b>
+                </a> to download Commission History</p>
+            </div>
+
+            <div class="col-md-12 text-center commision-history-info">
+              <p class="blue-border">
+                <i class="fas fa-exclamation-circle"></i> Current 30-Day Trailing Volume - 1,218,000 USD Approximately 101.5 BTC Current Commission Tier - 3.5%</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-12 button-group">
+        <button type="button" class="ebtn col-md-4 col-md-offset-4 blue-back" (click)="allCommisions = !allCommisions; showExistingBrokers=true;">Back</button>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal View -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h2 class="text-center title">BROKER INFO</h2>
+        <div class="row card-row">
+          <span class="gray-card">Broker 00001</span>
+        </div>
+        <div class="row card-row">
+          <span class="gray-card gray-down">Relik Wealth Management</span>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="form">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 modal-input-section">
+              <span class="col-lg-8 col-md-8 col-sm-10 col-xs-11 modal-span-text">Fincen Broker Code</span>
+              <span class="col-lg-4 col-md-4 col-sm-2 col-xs-1" style="text-align: right; color: #2083FE;">
+                <i class="fas fa-edit"></i>
+              </span>
+              <input type="text" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-control11" placeholder="1234567">
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 modal-input-section">
+              <span class="col-lg-8 col-md-8 col-sm-10 col-xs-11 modal-span-text">Commission Payment Account</span>
+              <span class="col-lg-4 col-md-4 col-sm-2 col-xs-1" style="text-align: right; color: #2083FE;">
+                <i class="fas fa-edit"></i>
+              </span>
+              <input type="text" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-control11" placeholder="CHASE BANK # *******495">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 modal-input-section">
+              <span class="col-lg-8 col-md-8 col-sm-10 col-xs-11 modal-span-text">Physical Address</span>
+              <span class="col-lg-4 col-md-4 col-sm-2 col-xs-1" style="text-align: right; color: #2083FE;">
+                <i class="fas fa-edit"></i>
+              </span>
+              <input type="text" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-control11" placeholder="1923 Pennsylvania Ave New York, NY 82349">
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 modal-input-section">
+              <span class="col-lg-8 col-md-8 col-sm-10 col-xs-11 modal-span-text">Shipping Address</span>
+              <span class="col-lg-4 col-md-4 col-sm-2 col-xs-1" style="text-align: right; color: #2083FE;">
+                <i class="fas fa-edit"></i>
+              </span>
+              <input type="text" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-control11" placeholder="1923 Pennsylvania Ave New York, NY 82349">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-12 col-xs-12 modal-input-section">
+              <span class="col-lg-8 col-md-8 col-sm-10 col-xs-11 modal-span-text">Contact</span>
+              <span class="col-lg-4 col-md-4 col-sm-2 col-xs-1" style="text-align: right; color: #2083FE;">
+                <i class="fas fa-edit"></i>
+              </span>
+              <input type="text" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-control11" placeholder="1923 Pennsylvania Ave New York, NY 82349">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-offset-1 col-lg-3 col-md-offset-1 col-md-3 col-sm-4 col-xs-12">
+              <button class="btn-black" style="height: 50px;width: 100%;margin-top: 20px;" (click)="allBonds = !allBonds; showExistingBrokers=false;"
+                data-dismiss="modal">View All Bonds</button>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+              <button class="btn-black" style="background-color: #2083FE; height: 50px;width: 100%;margin-top: 20px;" data-dismiss="modal">OK</button>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+              <button class="btn-black" style="height: 50px;width: 100%;margin-top: 20px;" (click)="allCommisions = !allCommisions; showExistingBrokers=false;"
+                data-dismiss="modal">Commision History</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- create success -->
+<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-sizes-name1" class="modal-title text-center title">Broker Account Created</h4>
+        <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="table-heading">
+          <span>Account Info</span>
+        </div>
+        <div class="table-outer">
+          <div class="table-inner row">
+            <div class="col-md-12">
+              <div class="row">
+
+                <div class="col-md-5">
+                  <h5 style="margin: 12%; text-align: right">Broker ID</h5>
+                  <h5 style="margin: 12%; text-align: right">Cash Money Management FinCEN</h5>
+                  <h5 style="margin: 12%; text-align: right">Temporary Broker Portal Password</h5>
+                </div>
+                <div class="col-md-5 form">
+                  <input type="text" class="col-md-12 form-control11" placeholder="000007">
+                  <input type="text" class="col-md-12 form-control11" placeholder="1234">
+                  <input type="text" class="col-md-12 form-control11" placeholder="TCR1!">
+                </div>
+                <div class="col-md-2">
+                  <i class="far fa-copy" style="margin: 20%; font-size: 18px; text-align: left;"></i>
+                  <i class="far fa-copy" style="margin: 20%; font-size: 18px; text-align: left;"></i>
+                  <i class="far fa-copy" style="margin: 20%; font-size: 18px; text-align: left;"></i>
+                </div>
+
+
+              </div>
+              <p class="orange-border" style="text-align: center;">
+                <i class="fas fa-exclamation-triangle"></i> Advise the broker to log on and change their password.</p>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="create-btn" style="margin: 20px 400px" (click)="showCreateBroker = true; lgModal.hide()" href=""
+          onclick="return false">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,485 @@
+<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12" style="background-color: #f6f6f6;">
+  <div *ngIf="showMain" id="main">
+    <!-- 1st table section -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-section">
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-7 table-heading">
+        <span>Bond Generation</span>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-outer">
+        <div class="table-inner row">
+          <div class="table-head-text">
+            <p>Generation Queue ( 2 orders waiting )</p>
+          </div>
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="table-holder">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>BROKER ID</th>
+                    <th>QUANTITY</th>
+                    <th>TYPE</th>
+                    <th>COIN</th>
+                    <th>DENOMINATION</th>
+                    <th>ACTION</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- <tr *ngFor="let broker of brokers">
+                    <td>0000{{ broker.brokerid }}</td>
+                    <td>{{ broker.quantity }}</td>
+                    <td>{{ broker.type }}</td>
+                    <td>
+                      <img src="../assets/images/icons/lite-coin.png" style="height:20px"> {{ broker.coin }}</td>
+                    <td>{{ broker.quantity }} {{ broker.coin }}</td>
+                    <td>
+                      <form>
+                        <input type="button" value="Cancel" class="btn btn-xs cancelButton">
+                        <input type="button" value="Mint" class="btn btn-xs mint" data-toggle="modal" data-target=".add-new-order">
+                      </form>
+                    </td>
+                  </tr> -->
+                  <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                  </tr>
+
+                </tbody>
+              </table>
+              <app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- cart section -->
+    <div class="add-cart">
+      <div class="row">
+        <div class="col-lg-offset-1 col-lg-2 col-md-offset-1 col-md-2 col-sm-offset-1 col-sm-2 col-xs-12">
+          <select name="brokerID">
+            <option selected="true" disabled="disabled">Broker ID</option>
+            <option value="00001">00001</option>
+            <option value="00002">00002</option>
+            <option value="00003">00003</option>
+          </select>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+          <select name="quantity" class="mid-section-select">
+            <option selected="true" disabled="disabled">Quantity</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="75">75</option>
+          </select>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+          <select name="type">
+            <option selected="true" disabled="disabled">Type</option>
+            <option value="standard">Standard</option>
+          </select>
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+          <select name="coin">
+            <option selected="true" disabled="disabled">Coin</option>
+            <option value="bitcoin">BitCoin</option>
+            <option value="litecoin">LiteCoin</option>
+          </select>
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+          <select name="denomination">
+            <option selected="true" disabled="disabled">Denomination</option>
+            <option value="25">1 BitCoin</option>
+            <option value="50">50 LiteCoin</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 buttons-section">
+      <div class="row">
+        <div class="col-lg-offset-3 col-lg-2 col-md-offset-3 col-md-2 col-sm-offset-3 col-sm-2 col-xs-4">
+          <input type="submit" value="Clear" class="btn btn-primary btn-lg clear btn-block">
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+          <input type="submit" value="Queue" class="btn btn-primary btn-lg queue btn-block">
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+          <input type="submit" value="Mint" class="btn btn-lg mint btn-block" data-toggle="modal" data-target=".add-new-order">
+        </div>
+      </div>
+    </div>
+
+    <!-- result show table -->
+    <!-- <div class="col-md-12">
+        <div class="table-heading">
+          <span>Print Bonds</span>
+        </div>
+        <div class="table-outer">
+          <div class="table-inner row">
+            <div class="col-md-12">
+              <p>Print Queue ( 2 orders waiting )</p>
+            </div>
+            <div class="col-md-12">
+              <div class="table-holder">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>BROKER ID</th>
+                      <th>QUANTITY</th>
+                      <th>TYPE</th>
+                      <th>COIN</th>
+                      <th>DENOMINATION</th>
+                      <th>ACTION</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let broker of brokers">
+                      <td>0000{{ broker.brokerid }}</td>
+                      <td>{{ broker.quantity }}</td>
+                      <td>{{ broker.type }}</td>
+                      <td>
+                        <img src="../assets/images/icons/lite-coin.png" style="height:20px"> {{ broker.coin }}</td>
+                      <td>{{ broker.quantity }} {{ broker.coin }}</td>
+                      <td>
+                        <form>
+                          <input type="button" value="Cancel" class="btn btn-xs cancelButton">
+                          <input type="button" value="Mint" class="btn btn-xs mint" data-toggle="modal" data-target=".add-new-order">
+                        </form>
+                      </td>
+                    </tr>
+ 
+                  </tbody>
+                </table>
+                <app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>-->
+  </div>
+  <!-- modal view -->
+
+  <!-- Printable Division -->
+  <div *ngIf="showPrintable" id="printable">
+    <div class="col-md-12">
+      <div class="table-heading">
+        <span>Print Bonds</span>
+      </div>
+      <div class="table-outer">
+        <div class="table-inner row">
+          <div class="col-md-12">
+            <p> Print Queue ( 2 orders waiting )</p>
+          </div>
+          <div class="col-md-12">
+            <div class="table-holder">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>QUANTITY</th>
+                    <th>BOND ID's</th>
+                    <th>DENOMINATION</th>
+                    <th>ACTION</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>50</td>
+                    <td>0000 0000 0000 0050 to 0000 0000 0000 0099</td>
+                    <td>1 BitCoin</td>
+                    <td>
+                      <form>
+                        <input type="button" value="PDF Files" class="btn btn-xs cancelButton">
+                        <input type="button" value="Print" class="btn btn-xs mint" (click)="smModal.show()">
+                      </form>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>75</td>
+                    <td>0000 0000 0000 0100 to 0000 0000 0000 0174</td>
+                    <td>50 LiteCoin</td>
+                    <td>
+                      <form>
+                        <input type="button" value="PDF Files" class="btn btn-xs cancelButton">
+                        <input type="button" value="Print" class="btn btn-xs mint" (click)="smModal.show()">
+                      </form>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-offset-4 col-lg-4 col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 col-xs-12 print-button">
+      <div class="inner1" style="color: #2FCA74; border-top: 2px solid #2FCA74; border-top-right-radius: 0px; text-align: center; margin-top: 35px;">
+        <p>
+          <i class="fas fa-print fa-2x"></i>
+          <strong> Printer: Connected TCR HOUSE</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade add-new-order" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="x_content">
+        <div class="modal-header">
+          <h3 id="dialog-sizes-name1" class="modal-title" style="color: #252529; margin-left:12%">
+            <strong> New Order</strong>
+          </h3>
+          <span aria-hidden="true">&times;</span>
+
+        </div>
+        <div class="modal-body">
+          <aw-wizard>
+            <aw-wizard-step stepTitle="Step 1 Confirm Bond Detail">
+              <br/>
+              <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8 col-xs-12 tab-outer">
+                <div class="tab-card top-down">
+                  <span>Overview</span>
+                </div>
+                <div class="inner">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-view">
+                    <div class="row">
+                      <p>Confirm Bonds:</p>
+                      <span class="ship-address">
+                        Relik wealth Managements,
+                        <br> 1932, Pennsylvania Ave,
+                        <br> New York NY 871246
+                      </span>
+                    </div>
+                    <div class="col-md-12 text-center">
+                      * All sales final upon submission
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <button type="button" class="col-lg-offset-4 col-lg-2 col-md-offset-4 col-md-2 col-sm-offset-4 col-sm-2 col-xs-offset-1 col-xs-5 btn-line"
+                  awNextStep>Edit</button>
+                <button type="button" class="col-lg-2 col-md-2 col-sm-2 col-xs-5 btn-blue" awNextStep>Confirm</button>
+              </div>
+
+              <!-- <button type="button" [awGoToStep]="{stepIndex: 2}">Go directly to third Step</button> -->
+            </aw-wizard-step>
+            <aw-wizard-step stepTitle="Step 2 Confirm Shipping Address">
+              <br/>
+              <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8 col-xs-12 tab-outer">
+                <div class="tab-card top-down">
+                  <span>Overview</span>
+                </div>
+                <div class="inner">
+                  <div class="col-md-12 table-view">
+                    <div class="row">
+                      <p>Ship Bitbond to:</p>
+                      <span class="ship-address">
+                        Relik wealth Managements,
+                        <br> 1932, Pennsylvania Ave,
+                        <br> New York NY 871246
+                      </span>
+                    </div>
+                    <div class="col-md-12 text-center">
+                      * All sales final upon submission
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <button type="button" class="col-lg-offset-4 col-lg-2 col-md-offset-4 col-md-2 col-sm-offset-4 col-sm-2 col-xs-offset-1 col-xs-5 btn-line"
+                  awNextStep>Edit</button>
+                <button type="button" class="col-lg-2 col-md-2 col-sm-2 col-xs-5 btn-blue" awNextStep>Confirm</button>
+              </div>
+              <!-- <button type="button" awPreviousStep>Go to previous step</button>
+                            <button type="button" awNextStep>Go to next step</button> -->
+            </aw-wizard-step>
+            <aw-wizard-step stepTitle="Step 3 Enter Payment Method">
+              <br/>
+              <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8 col-xs-12 tab-outer">
+                <div class="tab-card top-down">
+                  <span>Overview</span>
+                </div>
+                <div class="inner">
+                  <div class="col-md-12 table-view">
+                    <div class="row">
+                      <p>Confirm payment:</p>
+                      <span class="ship-address">
+                        Relik wealth Managements,
+                        <br> 1932, Pennsylvania Ave,
+                        <br> New York NY 871246
+                      </span>
+                    </div>
+                    <div class="col-md-12 text-center">
+                      * All sales final upon submission
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <button type="button" class="col-lg-offset-4 col-lg-2 col-md-offset-4 col-md-2 col-sm-offset-4 col-sm-2 col-xs-offset-1 col-xs-5 btn-line">Edit</button>
+                <button type="button" class="col-lg-2 col-md-2 col-sm-2 col-xs-5 btn-blue" awNextStep>Confirm</button>
+              </div>
+              <!-- <button type="button" awPreviousStep>Previous Step</button>
+                        <button type="button" (click)="finishFunction()">Finish</button> -->
+            </aw-wizard-step>
+            <aw-wizard-step stepTitle="Summary">
+              <br/>
+              <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8 col-xs-12 tab-outer">
+                <div class="tab-card top-down">
+                  <span>Overview</span>
+                </div>
+                <div class="inner">
+                  <div class="col-md-12 table-view">
+                    <div class="row">
+                      <p>Summery:</p>
+                      <span class="ship-address">
+                        Relik wealth Managements,
+                        <br> 1932, Pennsylvania Ave,
+                        <br> New York NY 871246
+                      </span>
+                    </div>
+                    <div class="col-md-12 text-center">
+                      * All sales final upon submission
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <button type="button" class="col-lg-offset-4 col-lg-2 col-md-offset-4 col-md-2 col-sm-offset-4 col-sm-2 col-xs-offset-1 col-xs-5 btn-line"
+                  (click)="finishFunction()">Cancel</button>
+                <button type="button" class="col-lg-2 col-md-2 col-sm-2 col-xs-5 btn-blue" (click)="showPrintable = true; showMain = false;"
+                  data-toggle="modal" data-target=".add-new-order">Submit</button>
+              </div>
+              <!-- <button type="button" awPreviousStep>Previous Step</button>
+                          <button type="button" (click)="finishFunction()">Finish</button> -->
+            </aw-wizard-step>
+          </aw-wizard>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Print Modal -->
+<div bsModal #smModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name2">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content print-content">
+      <div class="modal-header">
+        <h3 id="dialog-sizes-name1" class="modal-title pull-left" style="color: #252529">
+          <strong>Bond Print Complete!</strong>
+        </h3>
+        <span aria-hidden="true">&times;</span>
+      </div>
+
+      <div class="modal-body">
+        <aw-wizard>
+          <aw-wizard-step stepTitle="">
+            <h4 class="text-center">Number of Selected Bonds : 50</h4>
+            <br/>
+            <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12 tab-outer">
+              <div class="tab-card top-down">
+                <span>Ship To</span>
+              </div>
+              <div class="inner">
+                <div class="col-md-12 table-view">
+                  <div class="row">
+                    <span class="ship-address">
+                      Relik wealth Managements,
+                      <br> 1932, Pennsylvania Ave,
+                      <br> New York NY 871246
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="row">
+                <button type="button" class="col-lg-offset-4 col-lg-2 col-md-offset-4 col-md-2 col-sm-offset-3 col-sm-3 col-xs-offset-2 col-xs-4 btn-line"
+                  (click)="smModal.hide()">Cancel</button>
+                <button type="button" class="col-lg-2 col-md-2 col-sm-3 col-xs-4 btn-blue" awNextStep>Submit</button>
+              </div>
+            </div>
+            <!-- <button type="button" [awGoToStep]="{stepIndex: 2}">Go directly to third Step</button> -->
+          </aw-wizard-step>
+
+          <aw-wizard-step stepTitle="">
+            <h4 class="text-center">Number of Selected Bonds : 50</h4>
+            <br/>
+            <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12 tab-outer">
+              <div class="tab-card top-down">
+                <span>Ship To</span>
+              </div>
+              <div class="inner">
+                <div class="col-md-12 table-view">
+                  <div class="row">
+                    <span class="ship-address">
+                      Relik wealth Managements,
+                      <br> 1932, Pennsylvania Ave,
+                      <br> New York NY 871246
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="row">
+                <button type="button" class="col-lg-offset-4 col-lg-2 col-md-offset-4 col-md-2 col-sm-offset-3 col-sm-3 col-xs-offset-2 col-xs-4 btn-line"
+                  (click)="smModal.hide()">Cancel</button>
+                <button type="button" class="col-lg-2 col-md-2 col-sm-3 col-xs-4 btn-blue" awNextStep>Submit</button>
+              </div>
+            </div>
+            <!-- <button type="button" [awGoToStep]="{stepIndex: 2}">Go directly to third Step</button> -->
+          </aw-wizard-step>
+
+          <aw-wizard-step stepTitle="">
+            <h4 class="text-center">Number of Selected Bonds : 50</h4>
+            <br/>
+            <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12 tab-outer">
+              <div class="tab-card top-down">
+                <span>Ship To</span>
+              </div>
+              <div class="inner">
+                <div class="col-md-12 table-view">
+                  <div class="row">
+                    <span class="ship-address">
+                      Relik wealth Managements,
+                      <br> 1932, Pennsylvania Ave,
+                      <br> New York NY 871246
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="row">
+                <button type="button" class="col-lg-offset-5 col-lg-2 col-md-offset-5 col-md-2 col-sm-offset-4 col-sm-4 col-xs-offset-4 col-xs-4 btn-blue"
+                  (click)="showPrintable = true; showMain = false; smModal.hide()">Finish</button>
+              </div>
+            </div>
+            <!-- <button type="button" [awGoToStep]="{stepIndex: 2}">Go directly to third Step</button> -->
+          </aw-wizard-step>
+        </aw-wizard>
+      </div>
+    </div>
+  </div>
+</div>

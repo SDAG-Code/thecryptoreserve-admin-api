@@ -1,0 +1,11 @@
+{
+  "/getallbondgens": {
+     "target":  {
+       "host": "adminportal-dev.herokuapp.com",
+       "protocol": "https:"
+     },
+     "secure": false,
+     "changeOrigin": true,
+     "logLevel": "info"
+  }
+}

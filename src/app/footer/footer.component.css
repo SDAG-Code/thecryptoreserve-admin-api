@@ -1,0 +1,11 @@
+.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 4%;
+    z-index: 1030;
+    background: linear-gradient(45deg, #0E1935, #E4E9F3);
+    padding: 8px;
+    text-align: left;
+    color: #fff;
+}

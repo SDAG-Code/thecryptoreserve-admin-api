@@ -1,0 +1,380 @@
+<div class="col-md-10 col-sm-12 col-xs-12" style="background-color: #f6f6f6;">
+
+  <div class="col-md-12 top-card">
+    <div class="outer">
+      <div class="icon-card">
+        <span>Transaction History</span>
+        <!-- <button type="button" class="btn btn-cancel pull-right back-to-search" (click)="showExistingBrokers = !showExistingBrokers; showBtns = true"
+              href="" onclick="return false">Back to Menu</button> -->
+      </div>
+
+      <div class="inner">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+            <div class="panel-title">All Transaction</div>
+            <div class="x_panel">
+              <div class="form-group row">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                  <h5>Filter By Date</h5>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                  <input type="text" placeholder="Daterangepicker" class="form-control" bsDaterangepicker>
+                </div>
+              </div>
+
+              <div class="clearfix"></div>
+              <table datatable [dtOptions]="dtOptions" id="datatable-buttons" class="table table-striped table-bordered bulk_action">
+                <thead>
+                  <tr>
+                    <th>
+                      <input type="checkbox" id="check-all" class="flat">
+                    </th>
+                    <th>Transaction</th>
+                    <th>Bond ID</th>
+                    <th>Broker</th>
+                    <th>Holder</th>
+                    <th>Detail</th>
+                    <th>Origin</th>
+                    <th>Destination</th>
+                    <th>Type</th>
+                    <th>Date</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="checkbox" id="check-all" class="flat">
+                    </td>
+                    <td>0000000001</td>
+                    <td>--</td>
+                    <td>0000001</td>
+                    <td>BROKER</td>
+                    <td>$2,500 FOR 125 BITBONDS</td>
+                    <td>VISA CARD ENDING IN 0234</td>
+                    <td>TCR</td>
+                    <td>MINT</td>
+                    <td>03/04/2017</td>
+                    <td>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" id="check-all" class="flat">
+                    </td>
+                    <td>0000000002</td>
+                    <td>0000-0000-0000-0002</td>
+                    <td>0000001</td>
+                    <td>OWEN,PARKER</td>
+                    <td>$60,000 FOR 5 BITCOIN</td>
+                    <td>CHASE BANK ACCOUNT 4349</td>
+                    <td>BTC BITBOND ADDRESS</td>
+                    <td>LOAD</td>
+                    <td>03/04/2017</td>
+                    <td>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" id="check-all" class="flat">
+                    </td>
+                    <td>0000000003</td>
+                    <td>0000-0000-0000-0003</td>
+                    <td>0000001</td>
+                    <td>OWEN,PARKER</td>
+                    <td>5 BITCOIN FOR $90,000</td>
+                    <td>BTC BITBOND ADDRESS</td>
+                    <td>CHASE BANK ACCOUNT 4349</td>
+                    <td>SELL</td>
+                    <td>03/04/2017</td>
+                    <td>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" id="check-all" class="flat">
+                    </td>
+                    <td>0000000004</td>
+                    <td>0000-0000-0000-0004</td>
+                    <td>0000001</td>
+                    <td>BISSELL,JASON</td>
+                    <td>100 ETHEREUM</td>
+                    <td>ETH BITBOND ADDRESS</td>
+                    <td>ETH WALLET ADDRESS</td>
+                    <td>TRANSFER</td>
+                    <td>03/05/2017</td>
+                    <td>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" id="check-all" class="flat">
+                    </td>
+                    <td>0000000005</td>
+                    <td>--</td>
+                    <td>0000001</td>
+                    <td>BROKER</td>
+                    <td>$2,500 FOR 125 BITBONDS</td>
+                    <td>VISA CARD ENDING IN 0234</td>
+                    <td>TCR</td>
+                    <td>MINT</td>
+                    <td>03/06/2017</td>
+                    <td>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" id="check-all" class="flat">
+                    </td>
+                    <td>0000000006</td>
+                    <td>0000-0000-0000-0002</td>
+                    <td>0000001</td>
+                    <td>OWEN,PARKER</td>
+                    <td>$60,000 FOR 5 BITCOIN</td>
+                    <td>CHASE BANK ACCOUNT 4349</td>
+                    <td>BTC BITBOND ADDRESS</td>
+                    <td>LOAD</td>
+                    <td>03/07/2017</td>
+                    <td>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" id="check-all" class="flat">
+                    </td>
+                    <td>0000000007</td>
+                    <td>0000-0000-0000-0003</td>
+                    <td>0000001</td>
+                    <td>OWEN,PARKER</td>
+                    <td>5 BITCOIN FOR $90,000</td>
+                    <td>BTC BITBOND ADDRESS</td>
+                    <td>CHASE BANK ACCOUNT 4349</td>
+                    <td>SELL</td>
+                    <td>03/01/2017</td>
+                    <td>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" id="check-all" class="flat">
+                    </td>
+                    <td>0000000008</td>
+                    <td>0000-0000-0000-0003</td>
+                    <td>0000001</td>
+                    <td>OWEN,PARKER</td>
+                    <td>5 BITCOIN FOR $90,000</td>
+                    <td>BTC BITBOND ADDRESS</td>
+                    <td>CHASE BANK ACCOUNT 4349</td>
+                    <td>SELL</td>
+                    <td>03/02/2017</td>
+                    <td>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">View</button>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+              <h5>* Sort by clicking a data field</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal view -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h2 class="text-center title" id="myModalLabel">Details for Transaction</h2>
+      </div>
+
+      <div class="modal-body">
+        <div class="top-cards">
+          <div class="broker-id">
+            Broker ID 000001
+          </div>
+          <div class="broker-header-icon">
+            <i class="fas fa-link"></i>
+          </div>
+        </div>
+
+        <div class="table-outer">
+          <h4 class="text-center">
+            <strong>000002</strong>
+          </h4>
+          <h4 class="text-center space-around">Completed on 12/02/2017</h4>
+
+          <h4 class="text-center">
+            <strong>for BitBond</strong>
+          </h4>
+          <h4 class="text-center">
+            <strong>0000-0000-0000-0002</strong>
+          </h4>
+
+          <div class="row" style="margin: 20px;">
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 cards card1">
+                <h4 class="">
+                  <strong>$60,000</strong>
+                </h4>
+                <h4 class="space-around">from
+                  <strong>CHASE Bank</strong>
+                </h4>
+
+                <h4 class="">
+                  <strong>Account 4349</strong>
+                </h4>
+                <h4 class="">to send
+                  <strong>5 BTC</strong> to</h4>
+              </div>
+
+              <div class="col-lg-1 col-md-1 hidden-sm hidden-xs cards card2">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+
+              <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 cards card3">
+                <h4 class="">Wallet Address</h4>
+                <h4 class="" style="color: #2083FE">
+                  <strong>3QJmV3qfvL9SuYo34Yih</strong>
+                </h4>
+              </div>
+            </div>
+
+            <div class="row details-modal-input-row">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  <h4 class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <strong>Transaction Type</strong>
+                  </h4>
+                  <input type="text" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-control11" placeholder="" value="Load">
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  <h4 class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <strong>Broker Commission</strong>
+                  </h4>
+                  <input type="text" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-control11" placeholder="" value="$1,800">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  <h4 class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <strong>Holder</strong>
+                  </h4>
+                  <input type="text" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-control11" placeholder="" value="Owen, Parker">
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  <h4 class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <strong>TCR commission</strong>
+                  </h4>
+                  <input type="text" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-control11" placeholder="" value="$8,200">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default export-btn" data-dismiss="modal">Export Data</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Detail View -->
+<div *ngIf="showDetail" class="search-results" style="width: 100%;">
+  <div class="col-md-12 main">
+    <div class="table-heading">
+      <span>All Bonds minted under</span>
+      <div class="header-icon">
+        <i class="fas fa-link"></i>
+      </div>
+      <div class="bond-id">
+        Broker ID 000001
+      </div>
+    </div>
+    <div class="table-outer">
+
+      <div class="table-inner row">
+        <div class="col-md-12">
+          <p class="note">* Sort by clicking a data field</p>
+        </div>
+        <div class="col-md-12">
+          <div class="table-holder">
+            <table datatable [dtOptions]="dtOptions" class="row-border hover">
+              <thead>
+                <tr>
+                  <th>
+                    <input type="checkbox" id="check-all" class="flat">
+                  </th>
+                  <th>BOND ID</th>
+                  <th>STATUS</th>
+                  <th>HOLDER</th>
+                  <th>DENOMINATION</th>
+                  <th>PURCHASE RATE</th>
+                  <th>CURRENT VALUE</th>
+                  <th>%GAIN</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input type="checkbox" id="check-all" class="flat">
+                  </td>
+                  <td>0000-0000-0000-0001</td>
+                  <td class="active-stat">ACTIVE</td>
+                  <td>DONOHUE,TOM</td>
+                  <td>50 BITCOIN CASH</td>
+                  <td>600,000 USD</td>
+                  <td>101.5 BTC</td>
+                  <td>3.5%</td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="checkbox" id="check-all" class="flat">
+                  </td>
+                  <td>0000-0000-0000-0002</td>
+                  <td class="disable-stat">INACTIVE</td>
+                  <td>OWEN,PARKER</td>
+                  <td>50 BITCOIN CASH</td>
+                  <td>600,000 USD</td>
+                  <td>358 BTC</td>
+                  <td>3.5%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="col-md-12 button-group">
+    <button type="button" class="ebtn col-md-3 col-md-offset-2">Export Selected Bond Data</button>
+    <button type="button" class="ebtn col-md-3 col-md-offset-2">Export All Bond Data</button>
+  </div>
+</div>
